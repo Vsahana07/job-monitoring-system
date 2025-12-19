@@ -13,3 +13,7 @@ def start_search():
     global search_started
     search_started = True
     return {"message": "Job search started"}
+
+@app.get("/status")
+def get_status():
+    return {"search_started": search_started}
